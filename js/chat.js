@@ -75,3 +75,4 @@ function ChatController( $scope, rconService, $timeout )
 	}
 
 	rconService.InstallService( $scope, $scope.GetHistory )
+}
