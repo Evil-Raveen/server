@@ -1,4 +1,3 @@
-
 app.controller( 'ChatController', ChatController );
 
 function ChatController( $scope, rconService, $timeout )
@@ -76,4 +75,3 @@ function ChatController( $scope, rconService, $timeout )
 	}
 
 	rconService.InstallService( $scope, $scope.GetHistory )
-}
