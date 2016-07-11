@@ -1,15 +1,47 @@
-app.controller( 'ServerInfoController', ServerInfoController );
+<div ng-controller="ServerInfoController" flex layout="column" id="ServerInfoController">
 
-function ServerInfoController( $scope, rconService, $routeParams )
-{
-	$scope.info = {};
+	<div class="row">
 
-	$scope.refresh = function ()
-	{
-		rconService.Request( 'serverinfo', $scope, function ( msg ) {
-			$scope.info = JSON.parse( msg.Message );
-		});
-	}
+		<div class="col-sm-12">
+			<h2>
+				{{info.Hostname}}
+			</h2>
+		</div>
 
-	rconService.InstallService( $scope, $scope.refresh );
-}
+		<div class="col-sm-4" ng-repeat="(key, value) in info">
+			<p><span class="text-muted">{{key}}:</span> <span>{{value}}</span></p>
+		</div>
+
+		<!--
+		<div class="col-sm-4">
+			<p>Map: {{info.Map}}</p>
+		</div>
+		<div class="col-sm-4">
+			<p>Max Players: {{info.MaxPlayers}}</p>
+		</div>
+		<div class="col-sm-4">
+			<p>GameTime: {{info.GameTime}}</p>
+		</div>
+		<div class="col-sm-4">
+			<p>Framerate: <span class="badge">{{info.Framerate}}</span></p>
+		</div>
+		<div class="col-sm-4">
+			<p>EntityCount: <span class="badge">{{info.EntityCount}}</span></p>
+		</div>
+		<div class="col-sm-4">
+			<p>Uptime: <span class="badge">{{info.Uptime}}</span></p>
+		</div>
+		<div class="col-sm-4">
+			<p>Players: <span class="badge">{{info.Players}}</span></p>
+		</div>
+		<div class="col-sm-4">
+			<p>Joining: <span class="badge">{{info.Joining}}</span></p>
+		</div>
+		<div class="col-sm-4">
+			<p>Queued: <span class="badge">{{info.Queued}}</span></p>
+		</div>
+		-->
+
+	</div>
+
+</div>
