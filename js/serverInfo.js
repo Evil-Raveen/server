@@ -1,3 +1,4 @@
+
 app.controller( 'ServerInfoController', ServerInfoController );
 
 function ServerInfoController( $scope, rconService, $routeParams, $interval )
@@ -13,6 +14,6 @@ function ServerInfoController( $scope, rconService, $routeParams, $interval )
 
 	rconService.InstallService( $scope, $scope.refresh );
 
-	var timer = $interval( $scope.refresh, 30000 );
+	var timer = $interval( $scope.refresh, 10000 );
 	$scope.$on( "$destroy", function () { $interval.cancel( timer ); } );
 }
